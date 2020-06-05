@@ -1,7 +1,7 @@
 module.exports = {
   title: 'WordWeaver Documentation',
   tagline: 'Weave beautiful verb conjugation websites',
-  url: 'https://wordweaver.ca',
+  url: 'https://docs.wordweaver.ca',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   organizationName: 'National Research Council Canada', // Usually your GitHub org/user name.

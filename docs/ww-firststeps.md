@@ -12,8 +12,12 @@ Each WordWeaver instance will have two main parts, the main _WordWeaver_ API, an
 
 In order to run WordWeaver using the stock data, first `cd wordweaver` and then run `docker-compose up`. This will start a docker container with the WordWeaver API backend, and also a container with a CouchDB database. It will initialize the database with all of the data from `wordweaver/wordweaver/wordweaver/data/fr`.
 
+To customize your WordWeaver, please follow the instructions [on configuring your WordWeaver](ww-customization.md).
+
 ### WordWeaver-UI
 
 Then, you should be able to go to `localhost/docs` in your browser and look at the documentation for your WordWeaver API.
 
 In order to run the WordWeaver-UI, first `cd wordweaver-UI` and then run `npm start`. This will build the site using the development configuration. You should now be able to go to `localhost:4200` and view your instance of WordWeaver.
+
+To customize your WordWeaver-UI, please follow the instructions [on configuring your WordWeaver-UI](ww-ui-customization.md)
