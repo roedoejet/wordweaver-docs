@@ -1,7 +1,7 @@
 ---
 id: gramble-intro
-title: Gramble
-sidebar_label: Gramble
+title: Gramble & Language Modelling
+sidebar_label: Language Modelling with Gramble
 ---
 
 *This page assumes you are comfortable with [Git](https://en.wikipedia.org/wiki/Git), [Command Line](https://en.wikipedia.org/wiki/Command-line_interface), and [NPM](https://en.wikipedia.org/wiki/Npm_(software)). You must have all of these installed on your machine.*
@@ -59,7 +59,7 @@ Note that the values here must be unique and there is a conflict here as 'ayaa' 
 
 ### Update your WordWeaver configuration
 
-Once you have updated your Gramble language model to include all necessary keywords, you can make any necessary changes to your WordWeaver Configuration (*...guide forthcoming...*). You must also add `json` files with your all of your verb roots, pronouns and options. So, the 'Example Verbs' table above might become:
+Once you have updated your Gramble language model to include all necessary keywords, you can make any necessary changes to your [WordWeaver Configuration](ww-customization.md). You must also add `json` files with your all of your verb roots, pronouns and options. So, the 'Example Verbs' table above might become:
 
 ```json
 [

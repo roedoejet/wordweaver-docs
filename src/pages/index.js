@@ -9,7 +9,7 @@ import styles from './styles.module.css';
 const features = [
   {
     title: <>Save Time</>,
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    // imageUrl: 'img/undraw_docusaurus_mountain.svg',
     description: (
       <>
         WordWeaver was designed to be easily modified and used in a wide variety of language conjugation contexts.
@@ -19,7 +19,7 @@ const features = [
   },
   {
     title: <>Focus on What Matters</>,
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    // imageUrl: 'img/undraw_docusaurus_tree.svg',
     description: (
       <>
         WordWeaver lets you focus on your language model, and we&apos;ll do the chores and visualization. Go
@@ -29,7 +29,7 @@ const features = [
   },
   {
     title: <>Build beautiful, interactive conjugators</>,
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    // imageUrl: 'img/undraw_docusaurus_react.svg',
     description: (
       <>
         Turn your language data into an interactive web and mobile conjugation application.

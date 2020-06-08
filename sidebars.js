@@ -2,8 +2,9 @@ module.exports = {
   someSidebar: {
     WordWeaver: ['intro', 'features'],
     'Getting Started': ['installation', 'firststeps'],
-    'Language Models': ['gramble-intro'],
-    'Guides': ['ww-custom-intro', 'wwui-custom-intro'],
-    'Advanced': ['ww-ui-types']
+    'Configuration': ['ww-custom-intro', 'wwui-custom-intro'],
+    'Guides': [ 'gramble-intro', 'ww-ui-style'],
+    'Advanced Guides': ['ww-ui-validation','ww-i18n'],
+    'API Reference': ['ww-ui-types']
   },
 };

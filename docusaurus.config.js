@@ -11,7 +11,7 @@ module.exports = {
       title: 'WordWeaver',
       logo: {
         alt: 'Wordweaver',
-        src: 'img/logo.svg',
+        src: 'img/android-chrome-512x512.png',
       },
       links: [
         {
