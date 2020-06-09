@@ -275,7 +275,7 @@ The defaults found in `projects/word-weaver/src/environments/environment.ts` are
 
 ---
 
-### test_prefix
+### testPrefix
 
 **Type**: string
 
