@@ -1,0 +1,18 @@
+{
+  "id": "installation",
+  "title": "Installation",
+  "description": "This page assumes you are comfortable with Git, Command Line, Python), Docker), and NPM). You must have all of these installed on your machine.",
+  "source": "@site/docs/ww-installation.md",
+  "permalink": "/docs/installation",
+  "editUrl": "https://github.com/roedoejet/wordweaver-docs/edit/master/docs/ww-installation.md",
+  "sidebar_label": "Installation",
+  "sidebar": "someSidebar",
+  "previous": {
+    "title": "Features",
+    "permalink": "/docs/features"
+  },
+  "next": {
+    "title": "Taking your first steps with WordWeaver",
+    "permalink": "/docs/firststeps"
+  }
+}

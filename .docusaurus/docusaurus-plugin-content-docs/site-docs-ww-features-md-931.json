@@ -1,0 +1,18 @@
+{
+  "id": "ww.features",
+  "title": "Features",
+  "description": "You can write content using GitHub-flavored Markdown syntax.",
+  "source": "@site/docs/ww.features.md",
+  "permalink": "/docs/ww.features",
+  "editUrl": "https://github.com/roedoejet/wordweaver-docs/edit/master/docs/ww.features.md",
+  "sidebar_label": "Features",
+  "sidebar": "someSidebar",
+  "previous": {
+    "title": "Introduction",
+    "permalink": "/docs/ww.intro"
+  },
+  "next": {
+    "title": "Installation",
+    "permalink": "/docs/installation"
+  }
+}

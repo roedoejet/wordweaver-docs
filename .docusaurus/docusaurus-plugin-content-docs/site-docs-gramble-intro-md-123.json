@@ -1,0 +1,18 @@
+{
+  "id": "gramble-intro",
+  "title": "Gramble & Language Modelling",
+  "description": "This page assumes you are comfortable with Git, Command Line, and NPM). You must have all of these installed on your machine.",
+  "source": "@site/docs/gramble-intro.md",
+  "permalink": "/docs/gramble-intro",
+  "editUrl": "https://github.com/roedoejet/wordweaver-docs/edit/master/docs/gramble-intro.md",
+  "sidebar_label": "Language Modelling with Gramble",
+  "sidebar": "someSidebar",
+  "previous": {
+    "title": "Configuring your WordWeaver-UI",
+    "permalink": "/docs/wwui-custom-intro"
+  },
+  "next": {
+    "title": "Styling your WordWeaver",
+    "permalink": "/docs/ww-ui-style"
+  }
+}

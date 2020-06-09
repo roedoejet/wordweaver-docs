@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[25],{124:function(a){a.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"wordweaver","name":"wordweaver","count":1,"permalink":"/blog/tags/wordweaver"}')}}]);

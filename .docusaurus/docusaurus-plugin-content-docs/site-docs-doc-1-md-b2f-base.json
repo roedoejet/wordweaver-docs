@@ -1,0 +1,56 @@
+{
+  "docsSidebars": {
+    "someSidebar": [
+      {
+        "type": "category",
+        "label": "WordWeaver",
+        "items": [
+          {
+            "type": "link",
+            "label": "Introduction",
+            "href": "/docs/ww.intro"
+          },
+          {
+            "type": "link",
+            "label": "Features",
+            "href": "/docs/ww.features"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Getting Started",
+        "items": [
+          {
+            "type": "link",
+            "label": "Installation",
+            "href": "/docs/installation"
+          },
+          {
+            "type": "link",
+            "label": "First Steps",
+            "href": "/docs/first.steps"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Guides",
+        "items": []
+      },
+      {
+        "type": "category",
+        "label": "Advanced Guides",
+        "items": []
+      }
+    ]
+  },
+  "permalinkToSidebar": {
+    "/docs/first.steps": "someSidebar",
+    "/docs/installation": "someSidebar",
+    "/docs/ww.features": "someSidebar",
+    "/docs/ww.intro": "someSidebar"
+  },
+  "isHomePage": true,
+  "homePagePath": "/docs/doc1"
+}

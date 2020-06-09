@@ -1,0 +1,18 @@
+{
+  "id": "features",
+  "title": "Features",
+  "description": "WordWeaver has a number of important features that are custom-designed for language revitalization purposes. Click on any of the links below to see specific guides.",
+  "source": "@site/docs/ww-features.md",
+  "permalink": "/docs/features",
+  "editUrl": "https://github.com/roedoejet/wordweaver-docs/edit/master/docs/ww-features.md",
+  "sidebar_label": "Features",
+  "sidebar": "someSidebar",
+  "previous": {
+    "title": "Introduction",
+    "permalink": "/docs/intro"
+  },
+  "next": {
+    "title": "Installation",
+    "permalink": "/docs/installation"
+  }
+}

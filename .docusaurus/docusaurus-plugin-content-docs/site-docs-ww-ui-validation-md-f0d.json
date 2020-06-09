@@ -1,0 +1,18 @@
+{
+  "id": "ww-ui-validation",
+  "title": "WordWeaver-UI Validation",
+  "description": "...coming soon...",
+  "source": "@site/docs/ww-ui-validation.md",
+  "permalink": "/docs/ww-ui-validation",
+  "editUrl": "https://github.com/roedoejet/wordweaver-docs/edit/master/docs/ww-ui-validation.md",
+  "sidebar_label": "Validation",
+  "sidebar": "someSidebar",
+  "previous": {
+    "title": "Styling your WordWeaver",
+    "permalink": "/docs/ww-ui-style"
+  },
+  "next": {
+    "title": "Translation & Internationalization",
+    "permalink": "/docs/ww-i18n"
+  }
+}

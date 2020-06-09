@@ -1,0 +1,18 @@
+{
+  "id": "firststeps",
+  "title": "Taking your first steps with WordWeaver",
+  "description": "Going through your first steps with WordWeaver assumes you've first installed the necessary requirements.",
+  "source": "@site/docs/ww-firststeps.md",
+  "permalink": "/docs/firststeps",
+  "editUrl": "https://github.com/roedoejet/wordweaver-docs/edit/master/docs/ww-firststeps.md",
+  "sidebar_label": "First Steps",
+  "sidebar": "someSidebar",
+  "previous": {
+    "title": "Installation",
+    "permalink": "/docs/installation"
+  },
+  "next": {
+    "title": "Configuring your WordWeaver",
+    "permalink": "/docs/ww-custom-intro"
+  }
+}

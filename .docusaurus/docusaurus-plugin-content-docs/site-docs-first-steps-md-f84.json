@@ -1,0 +1,14 @@
+{
+  "id": "first-steps",
+  "title": "Taking your first steps with WordWeaver",
+  "description": "You can write content using GitHub-flavored Markdown syntax.",
+  "source": "@site/docs/first-steps.md",
+  "permalink": "/docs/first-steps",
+  "editUrl": "https://github.com/roedoejet/wordweaver-docs/edit/master/docs/first-steps.md",
+  "sidebar_label": "First Steps",
+  "sidebar": "someSidebar",
+  "previous": {
+    "title": "Installation",
+    "permalink": "/docs/installation"
+  }
+}

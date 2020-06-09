@@ -1,0 +1,16 @@
+{
+  "welcome": {
+    "allTagsPath": "/blog/tags",
+    "slug": "welcome",
+    "name": "welcome",
+    "count": 1,
+    "permalink": "/blog/tags/welcome"
+  },
+  "wordweaver": {
+    "allTagsPath": "/blog/tags",
+    "slug": "wordweaver",
+    "name": "wordweaver",
+    "count": 1,
+    "permalink": "/blog/tags/wordweaver"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "id": "wwui-page-Settings",
+  "title": "Settings Page",
+  "source": "@site/docs/ww-ui-page-settings.md",
+  "permalink": "/docs/wwui-page-Settings",
+  "editUrl": "https://github.com/roedoejet/wordweaver-docs/edit/master/docs/ww-ui-page-settings.md",
+  "sidebar_label": "Settings Page"
+}
