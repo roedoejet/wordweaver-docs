@@ -1,33 +1,37 @@
-# Website
+# wordweaver-docs
 
-This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
+[![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
+TODO: Put more badges here.
 
-### Installation
+:construction: This repo is under construction, please do not use yet :construction:
 
-```
-$ yarn
-```
+Documentation for the WordWeaver suite of tools
 
-### Local Development
+TODO: Fill out this long description.
 
-```
-$ yarn start
-```
+## Table of Contents
 
-This command starts a local development server and open up a browser window. Most changes are reflected live without having to restart the server.
+- [wordweaver-docs](#wordweaver-docs)
+  - [Table of Contents](#table-of-contents)
+  - [Background](#background)
+  - [Maintainers](#maintainers)
+  - [Contributing](#contributing)
+  - [License](#license)
 
-### Build
+## Background
 
-```
-$ yarn build
-```
+This is a separate repo containing step-by-step documentation on how to build your own WordWeaver using [WordWeaver](https://github.com/roedoejet/wordweaver) and [WordWeaver-UI](https://github.com/roedoejet/wordweaver-UI).
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## Maintainers
 
-### Deployment
+[@roedoejet](https://github.com/roedoejet)
 
-```
-$ GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
-```
+## Contributing
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+PRs accepted.
+
+Small note: If editing the README, please conform to the [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
+
+## License
+
+MIT © 2020 Aidan Pine

@@ -7,6 +7,13 @@ module.exports = {
   organizationName: 'National Research Council Canada', // Usually your GitHub org/user name.
   projectName: 'wordweaver', // Usually your repo name.
   themeConfig: {
+    announcementBar: {
+      id: 'do_not_use', // Any value that will identify this message.
+      content:
+        "Please do not attempt to use these docs. We're working hard on it, but they're not quite ready yet.",
+      backgroundColor: '#DB7093', // Defaults to `#fff`.
+      textColor: '#091E42', // Defaults to `#000`.
+    },
     navbar: {
       title: 'WordWeaver',
       logo: {
