@@ -10,7 +10,7 @@ Each WordWeaver instance will have two main parts, the main _WordWeaver_ API, an
 
 ### WordWeaver
 
-In order to run WordWeaver using the stock data, first `cd wordweaver` and then run `docker-compose up`. This will start a docker container with the WordWeaver API backend, and also a container with a CouchDB database. It will initialize the database with all of the data from `wordweaver/wordweaver/wordweaver/data/fr`.
+In order to run WordWeaver using the stock data, first `cd wordweaver` and then run `docker-compose up`. This will start a docker container with the WordWeaver API backend.
 
 To customize your WordWeaver, please follow the instructions [on configuring your WordWeaver](ww-customization.md).
 

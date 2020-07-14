@@ -16,8 +16,6 @@ If there are files in your cloned version that are not in the tree below, you do
 
 ```
 .
-+-- volumes
-|   +-- db
 +-- wordweaver
 |       +-- test
 |       +-- wordweaver
@@ -39,12 +37,11 @@ If there are files in your cloned version that are not in the tree below, you do
 +-- docker-compose.yml
 +-- Dockerfile
 +-- env-backend.env
-+-- env-couch.env
 +-- init-letsencrypt.sh
 +-- local.ini
 ```
 
-When deploying just to a development environment (the default) there are only two services being composed by docker, the [backend](#backend-wordweaver) and the [database](#db-couchdb). To deploy to production, we also need a [certbot](#certbot) service and a [reverse proxy](#reverse-proxy-nginx).
+When deploying just to a development environment (the default) there is only one service being composed by docker, the [backend](#backend-wordweaver). To deploy to production, we also need a [certbot](#certbot) service and a [reverse proxy](#reverse-proxy-nginx).
 
 ## Backend (WordWeaver)
 
@@ -228,15 +225,6 @@ Your CORS rules are defined in `wordweaver/wordweaver/main.py`. You can edit all
 ### Edit routes
 
 Your routes are defined in `wordweaver/wordweaver/main.py`. By default, there are routes to the auto-built API documentation at `/docs`, as well as your `options`, `pronouns`, `verbs`, and `conjugations` resources, prefixed by `/api/v1`.
-
-
-## DB (CouchDB)
-
-Most setups will not need to edit any configuration of your database. Some default settings are declared in `local.ini` which is copied to the `db` service container and saved as a volume in `volumes/db/local.ini` after running `docker-compose build`.
-
-:::important
-It is recommended that you edit the username and password in `env-couch.env`.
-:::
 
 ## Reverse Proxy (nginx)
 

@@ -22,7 +22,6 @@ Many developers want to know a summary of the tools used in a given project. The
 #### WordWeaver
 
 - [FastAPI](https://fastapi.tiangolo.com/)
-- [CouchDB](https://docs.couchdb.org/en/stable/)
 - [nginx](http://nginx.org/en/)
 - [docker](https://www.docker.com/)
 - [docker-compose](https://docs.docker.com/compose/)
