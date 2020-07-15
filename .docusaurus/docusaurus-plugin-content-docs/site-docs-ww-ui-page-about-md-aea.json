@@ -1,8 +1,0 @@
-{
-  "id": "wwui-page-about",
-  "title": "About Page",
-  "source": "@site/docs/ww-ui-page-about.md",
-  "permalink": "/docs/wwui-page-about",
-  "editUrl": "https://github.com/roedoejet/wordweaver-docs/edit/master/docs/ww-ui-page-about.md",
-  "sidebar_label": "About Page"
-}
