@@ -4,8 +4,8 @@ module.exports = {
   url: 'https://docs.wordweaver.ca',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'National Research Council Canada', // Usually your GitHub org/user name.
-  projectName: 'wordweaver', // Usually your repo name.
+  organizationName: 'roedoejet', // Usually your GitHub org/user name.
+  projectName: 'wordweaver-docs', // Usually your repo name.
   themeConfig: {
     announcementBar: {
       id: 'do_not_use', // Any value that will identify this message.

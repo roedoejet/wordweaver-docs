@@ -19,4 +19,4 @@ So, the collaboration was formed, and a team of researchers from NRC joined a gr
 
 As the ILT has a national scope, NRC did not want to create just one verb conjugator, but rather create a framework that other communities could adapt to create their own WordWeavers. The tool documented here is the result of this work and the guides contained in this site show you how to build your own WordWeavers and do everything from using your own language, providing your own translation of the entire site, or adapting the colour theme used in the site.
 
-Good luck, and [start making your WordWeaver](firststeps.md)!
+Good luck, and [start making your WordWeaver](ww-firststeps.md)!
