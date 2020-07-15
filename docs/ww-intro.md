@@ -6,7 +6,7 @@ sidebar_label: Introduction
 
 ## The story of WordWeaver
 
-WordWeaver is the outcome of multiple years of collaborative research between the Canadian National Research Council's [Indigenous Language Technology (ILT) project](https://nrc.canada.ca/en/node/1378) and the [Onkwawenna Kentyohkwa](http://onwawenna.info) (Our Language Society) Kanyen'kéha immersion school in the Six Nations of the Grand River Territory.
+WordWeaver is the outcome of multiple years of collaborative research between the Canadian National Research Council's [Indigenous Language Technology (ILT) project](https://nrc.canada.ca/en/node/1378) and the [Onkwawenna Kentyohkwa](http://onkwawenna.info) (Our Language Society) Kanyen'kéha immersion school in the Six Nations of the Grand River Territory.
 
 
 ### Onkwawenna Kentyohkwa & Kawennón:nis

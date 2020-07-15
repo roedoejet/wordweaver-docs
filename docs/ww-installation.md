@@ -16,4 +16,4 @@ sidebar_label: Installation
 1. Second, clone the WordWeaver-UI repository: ```git clone https://github.com/nrc-cnrc/wordweaver-UI```
 2. To install WordWeaver-UI: `cd wordweaver-UI && npm install`
 
-You're now ready to go on to your [first steps](firststeps.md)!
+You're now ready to go on to your [first steps](ww-firststeps.md)!

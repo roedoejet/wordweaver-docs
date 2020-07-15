@@ -163,7 +163,7 @@ You can either replace the configuration in `projects/word-weaver/src/config/con
 **Effect**: The list of languages here is used in the Settings and Header to select languages. The `label` is the displayed string and the `value` is the internal value. We recommend this should be an [ISO 639-3](https://en.wikipedia.org/wiki/ISO_639-3) value.
 
 :::important
-**Requirements**: Your language **will not** work without the proper translation files. Please follow the [internationalization](ww-ui-i18n.md) guide.
+**Requirements**: Your language **will not** work without the proper translation files. Please follow the [internationalization](ww-i18n.md) guide.
 :::
 
 ---
