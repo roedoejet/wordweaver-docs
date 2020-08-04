@@ -173,3 +173,5 @@ export const THEMES: Theme[] = [
 ```
 
 That's it! You've added your new theme. Congratulations!
+
+## Custom CSS

@@ -7,6 +7,11 @@ module.exports = {
   organizationName: 'roedoejet', // Usually your GitHub org/user name.
   projectName: 'wordweaver-docs', // Usually your repo name.
   themeConfig: {
+    // algolia: {
+    //   apiKey: 'YOUR_API_KEY',
+    //   indexName: 'YOUR_INDEX_NAME',
+    //   searchParameters: {}, // Optional (if provided by Algolia)
+    // },
     announcementBar: {
       id: 'do_not_use', // Any value that will identify this message.
       content:
@@ -27,7 +32,7 @@ module.exports = {
           label: 'Docs',
           position: 'left',
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
+        { to: 'blog', label: 'Blog', position: 'left' },
         {
           href: 'https://github.com/nrc-cnrc/wordweaver',
           label: 'GitHub',

@@ -58,6 +58,74 @@ The other place that will require some configuration is in `projects/word-weaver
 Editing the configuration in the way described in this guide assumes you have TypeScript hints in your text editor (we suggest Visual Studio Code). Without it, you might make type errors that cause WordWeaver to crash!
 :::
 
+### Highlights
+
+By editing your app's `HIGHLIGHTS` variable, you can set which parts of your conjugations are highlighted by default. Setting to `true` will highlight the unit by default. the names of highlights here **must** correspond with [types](ww-customization#conjugations) that are present in your conjugation data.
+
+```typescript
+export const HIGHLIGHTS: Highlight = {
+  root: true,
+  ending: true
+};
+```
+
+### Tiers
+
+Response morphemes are units that can be concatenated into `Tiers`. Tiers concatenate [response morphemes](ww-customization#conjugations) based on a provided key. They also join them with a provided `separator` value. 
+
+For example, a possible conjugation:
+
+```json
+{
+    "input": {
+        "root": "courir",
+        "option": "indicatif-present",
+        "agent": "2-pl"
+    },
+    "output": [
+        {
+            "position": 0,
+            "value": "cour",
+            "type": [
+                "root"
+            ]
+        },
+        {
+            "position": 1,
+            "value": "ez",
+            "type": [
+                "ending"
+            ]
+        }
+    ]
+}
+```
+
+Here, `courir` must be a tag of a verb defined in `verbs.json`. `indicatif-present` must be a tag of an option defined in `options.json` and `2-pl` must be a tag of a pronoun defined in `pronouns.json`.
+
+Here is an example of two possible tiers that could be defined from this type of data in a WordWeaver UI:
+
+```typescript
+export const TIERS: Tier[] = [
+  {
+    name: "display",
+    key: "value",
+    position: 0,
+    separator: ""
+  },
+  {
+    name: "breakdown",
+    key: "value",
+    position: 1,
+    separator: "-"
+  }
+];
+```
+
+Here, the `display` tier value would be `courez` while the `breakdown` tier would be `cour-ez`.
+
+### Meta
+
 Below is a complete sample configuration of a WordWeaver-UI's Meta data. This configuration gives basic high-level information to WordWeaver that let's it know how to display your site.
 
 ```typescript
@@ -352,7 +420,7 @@ export const initialSettings: Partial<SettingsState> = {
 Variables are written in upper case by convention. 
 
 :::tip
-To see how to create your own themes, please visit the [theme guide](ww-ui-style.md).
+To see how to create your own themes, please visit the [theme guide](ww-ui-style).
 :::
 
 ---
