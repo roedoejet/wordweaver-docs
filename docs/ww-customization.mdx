@@ -112,7 +112,11 @@ For example, the verbs JSON file should be of the following form:
 
 ### Pronouns
 
-You must have data related to pronouns available in your WordWeaver in a `pronouns.json` file. Your pronouns should be a JSON array of objects. Minimally, each pronoun in your pronoun array **must** have a unique`tag` and the JSON file must include both the `tag` and a display form (i.e. what the user will see). The default for the pronouns is to accept only a `subject`. To include an `object`, it should be included in the pronouns JSON file and the [Conjugations](#conjugations) related models must be updated as well (see section for details).
+You must have data related to pronouns available in your WordWeaver in a `pronouns.json` file. Your pronouns should be a JSON array of objects. Minimally, each pronoun in your pronoun array **must** have a unique`tag` and the JSON file must include both the `tag` and a display form (i.e. what the user will see). The default for the pronouns is to accept only an `agent`. To include a `patient`, it should be included in the pronouns JSON file and the [Conjugations](#conjugations) related models must be updated as well (see section for details).
+
+:::info
+WordWeaver was initially created for Kanyen'kéha, an Iroquoian language. In Iroquoian languages, [semantic](https://en.wikipedia.org/wiki/Theta_role) notions of 'Agent' and "Patient" are more meaningful than purely syntactic notions of 'Subject' and 'Object'. The naming here is vestigial from that, and could be refactored in upcoming versions of wordweaver.
+:::
 
 #### tag
 
@@ -140,7 +144,7 @@ For example, the pronouns JSON file should be of the following form:
        "tag":"1SG",
        "en": 
             {
-                 "subject": "I"
+                 "agent": "I"
             },
    }
 ]
@@ -204,7 +208,7 @@ class ResponseObject(BaseModel):
     output: Conjugation
 ```
 
-The `input` is an object that includes the tag values for each related `verb`, `pronoun`, and `option`. __Note__ that the default ConjugationInput class assumes _only_ a subject is required for any given conjugation. If your language's conjugations may require an `object`, please be sure to add an `object` attribute to this model. 
+The `input` is an object that includes the tag values for each related `verb`, `pronoun`, and `option`. __Note__ that the default ConjugationInput class assumes _only_ an agent is required for any given conjugation. If your language's conjugations may require an `patient`, please be sure to add a `patient` attribute to this model. 
 
 
 <sub>Source: src/wordweaver/data/yourlang/models.py</sub>
@@ -213,7 +217,7 @@ The `input` is an object that includes the tag values for each related `verb`, `
 class ConjugationInput(BaseModel):
     root: str
     option: str
-    subject: str
+    agent: str
 ```
 
 
@@ -247,7 +251,7 @@ For example, the conjugations JSON file should be of the following form:
     "input": {
         "root": "courir",
         "option": "indicatif-present",
-        "subject": "2-pl"
+        "agent": "2-pl"
     },
     "output": [
         {
