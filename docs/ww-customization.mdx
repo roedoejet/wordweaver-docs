@@ -23,15 +23,15 @@ If there are files in your cloned version that are not in the tree below, you do
 |       +-- wordweaver
 |           +-- data
 |               +-- fr
+|                   +-- i18n
+|                       +-- en.json
+|                       +-- fr.json
 |                   +-- __init__.py
 |                   +-- conjugations.json
 |                   +-- models.py
 |                   +-- options.json
 |                   +-- pronouns.json
 |                   +-- verbs.json
-|                       +-- i18n
-|                           +-- en.json
-|                           +-- fr.json
 |               +-- yourlang
 |                   +-- __init__.py
 |                   +-- models.py
@@ -57,12 +57,12 @@ This is the main configurable service. It is the `wordweaver` Python package and
 
 Every WordWeaver has its data separated into 4 main sections: [Verbs](#verbs), [Pronouns](#pronouns), [Options](#options), and [Conjugations](#conjugations). This data must be in JSON format. To add your data, create a new folder in `src/wordweaver/data` named after your languages’s [ISO 639-3 code](https://iso639-3.sil.org/code_tables/639/data). You will need to add 6 files: the described JSON data files, a blank \_\_init\_\_.py file, and a [models](#models) file. The following sections describe the data and models files.
 
-In order for your data to be used when ran, you must change the variable WWLANG in the file `src/env-backend.env` to your languages’s [ISO 639-3 code](https://iso639-3.sil.org/code_tables/639/data). For example, to use the french data, it must read as follows:
+In order for your data to be used when ran, you must change the variable WWLANG in the file `src/env-backend.env` to your languages’s [ISO 639-3 code](https://iso639-3.sil.org/code_tables/639/data) that you replaced `yourlang` with. For example, to use the french data, it must read as follows:
  
-       `WWLANG=fr`
+       WWLANG=fr
 
 
-__Note__: There is a default folder included in the initial downloaded, called `src/wordweaver/data/yourlang`. This folder contains the default models.py file (exactly as described below) and an empty \_\_init\_\_.py file. You may also instead rename this folder after your languages’s ISO 639-3 code and add your JSON data files there.
+__Note__: There is a default folder included in the initial downloaded, called `src/wordweaver/data/yourlang`. This folder contains the default models.py file (exactly as described below) and an empty `__init__.py` file. You may also instead rename this folder after your languages’s ISO 639-3 code and add your JSON data files there.
 
 __Note__: There is a french wordweaver included in the initial downloaded, called `src/wordweaver/data/fr`. Feel free to explore this folder for reference or to copy code.
 
@@ -71,7 +71,7 @@ First, we will describe the data structures and files you will need to build.
 
 ### Verbs
 
-You must have data related to the verb roots available in your WordWeaver in a `verbs.json` file. Your verbs should be a JSON array of objects. Minimally, each verb in your verbs array **must** have a unique`tag` and a `classes` key. 
+You must have data related to the verb roots available in your WordWeaver in a `verbs.json` file. Your verbs should be a JSON array of objects. Minimally, each verb in your verbs array **must** have a unique `tag` and a `classes` key. 
 
 #### tag
 
@@ -83,15 +83,19 @@ The `classes` key is an array of strings that are CSS class names to apply to th
 
 Default Definition:
 
+
+<sub>Source: src/wordweaver/data/yourlang/models.py</sub>
+
 ```python
 class Verb(BaseModel):
     ''' Required '''
     tag: str = ''
     classes: List[str] = []
-```  
-<sub>Source: `src/wordweaver/data/<yourlang>/models.py`</sub>
+``` 
 
 For example, the verbs JSON file should be of the following form:
+
+<sub>Source: src/wordweaver/data/yourlang/verbs.json</sub>
 
 ```json
 [
@@ -104,7 +108,6 @@ For example, the verbs JSON file should be of the following form:
    }
 ]
 ```
-<sub>Source: `src/wordweaver/data/<yourlang>/verbs.json`</sub>
 
 
 ### Pronouns
@@ -117,15 +120,19 @@ The `tag` is the unique identifier for that pronoun. It must also be URL friendl
 
 Default Definition:
 
+<sub>Source: src/wordweaver/data/yourlang/models.py</sub>
+
 ```python
 class Pronoun(BaseModel):
     ''' Required '''
     tag: str = ''
 ```
-<sub>Source: `src/wordweaver/data/<yourlang>/models.py`</sub>
  
  
 For example, the pronouns JSON file should be of the following form:
+
+
+<sub>Source: src/wordweaver/data/yourlang/pronouns.json</sub>
 
 ```json
 [
@@ -138,7 +145,6 @@ For example, the pronouns JSON file should be of the following form:
    }
 ]
 ```
-<sub>Source: `src/wordweaver/data/<yourlang>/pronouns.json`</sub>
 
 ### Options
 
@@ -154,15 +160,20 @@ The `type` allows for categorization of options (ex. tense, aspect etc)
 
 Default Definition:
 
+
+<sub>Source: src/wordweaver/data/yourlang/models.py</sub>
+
 ```python
 class Option(BaseModel):
     ''' Required '''
     tag: str = ''
     type: str = ''
 ```
-<sub>Source: `src/wordweaver/data/<yourlang>/models.py`</sub>
  
  For example, the options JSON file should be of the following form:
+
+
+<sub>Source: src/wordweaver/data/yourlang/options.json</sub>
 
 ```json
 [
@@ -176,7 +187,6 @@ class Option(BaseModel):
    }
 ]
 ```
-<sub>Source: `src/wordweaver/data/<yourlang>/options.json`</sub>
 
 
 ### Conjugations
@@ -185,14 +195,19 @@ You must have data related to the conjugations available in your WordWeaver in a
 
 Each conjugation consists of an `input` and an `output`:
 
+
+<sub>Source: src/wordweaver/data/yourlang/models.py</sub>
+
 ```python
 class ResponseObject(BaseModel):
     input: ConjugationInput
     output: Conjugation
 ```
-<sub>Source: `src/wordweaver/data/<yourlang>/models.py`</sub>
 
 The `input` is an object that includes the tag values for each related `verb`, `pronoun`, and `option`. __Note__ that the default ConjugationInput class assumes _only_ a subject is required for any given conjugation. If your language's conjugations may require an `object`, please be sure to add an `object` attribute to this model. 
+
+
+<sub>Source: src/wordweaver/data/yourlang/models.py</sub>
 
 ```python
 class ConjugationInput(BaseModel):
@@ -200,7 +215,6 @@ class ConjugationInput(BaseModel):
     option: str
     subject: str
 ```
-<sub>Source: `src/wordweaver/data/<yourlang>/models.py`</sub>
 
 
 The `output` is a list of objects containing response morphemes:
@@ -208,6 +222,9 @@ The `output` is a list of objects containing response morphemes:
 ```python
 Conjugation = List[ResponseMorpheme]
 ```
+
+
+<sub>Source: src/wordweaver/data/yourlang/models.py</sub>
 
 ```python
 class ResponseMorpheme(BaseModel):
@@ -217,11 +234,13 @@ class ResponseMorpheme(BaseModel):
     english: Optional[str]
     type: Optional[List[str]]
 ```
-<sub>Source: `src/wordweaver/data/<yourlang>/models.py`</sub>
 
 Response morphemes are units that can be concatenated into `Tiers`. Tiers are [defined in the WordWeaver UI](#ww-ui-customization#tiers).
 
 For example, the conjugations JSON file should be of the following form:
+
+
+<sub>Source: src/wordweaver/data/yourlang/conjugations.json</sub>
 
 ```json
 {
@@ -248,7 +267,6 @@ For example, the conjugations JSON file should be of the following form:
     ]
 }
 ```
-<sub>Source: `src/wordweaver/data/<yourlang>/conjugations.json`</sub>
 
 Here, `courir` must be a tag of a verb defined in `verbs.json`. `indicatif-present` must be a tag of an option defined in `options.json` and `2-pl` must be a tag of a pronoun defined in `pronouns.json`.
 
@@ -256,9 +274,12 @@ If your language data is not available split up into morphemes, instead put the 
 
 ### Models
 
-Your models.py file is found at `src/wordweaver/data/<yourlang>/models.py` and should contain a model for each data file ([Verbs](#verbs), [Pronouns](#pronouns), [Options](#options), and [Conjugations](#conjugations)). If your data does vary from the default that’s been described, you will have to update the associated model.
+Your models.py file is found at `src/wordweaver/data/yourlang/models.py` and should contain a model for each data file ([Verbs](#verbs), [Pronouns](#pronouns), [Options](#options), and [Conjugations](#conjugations)). If your data does vary from the default that’s been described, you will have to update the associated model.
 
 For example, if you wanted to include  a "gender" attribute to your "pronoun" data, you would have to up the pronoun model as follows
+
+
+<sub>Source: src/wordweaver/data/yourlang/models.py</sub>
 
 ```typescript {2}
 class Pronoun(BaseModel):
@@ -266,32 +287,149 @@ class Pronoun(BaseModel):
    gender: str = ''
    tag: str = ''
 ```
-<sub>Source: `src/wordweaver/data/<yourlang>/models.py`</sub>
 
 If your data does not vary from the described defaults, the included default models.py file will contain all sufficient information and can be left untouched.
 
-### Internationalization - Including Other Languages
+## Internationalization - Including Other Languages
 
-The current front end in it's entirety is translated available in both English and French. To include translations for the entire website in another language, see [Internationalization] (link).
+Translating your wordweaver into other languages is done in two different places. The current front end in its entirety is translated available in both English and French. 
+To include translations for the entire website in another language, see [Internationalization](ww-ui-customization.md#i18n). In order to add translations for your language data, follow the steps below.
 
-Note that for all JSON files described in this section, the default display forms are expected in english. To include display forms in other languages, at this step you should similarily include those translations under the languages’s ISO 639-3 code. For example, if you wanted to include French display forms for your data, your pronouns should look as follows: 
+:::important
+You must have installed wordweaver to use the command line methods needed for this section. To install, first go to your clone `cd ~/wordweaver` and then do an editable installation `pip3 install -e .`.
+:::
+
+
+### Create the basic translation files
+
+First, make sure that `WWLANG` is set to the right language. You can check this by typing `echo $WWLANG` in your terminal. This should produce a value. If not, enter `export WWLANG=yourlang` in your terminal.
+
+Then, create your translation files by running 
+
+```bash
+wordweaver extract-translations yourlang
+``` 
+
+If you are wanting to extract translations for multiple languages (including English), then just append them:
+
+```bash
+wordweaver extract-translations en yourlang1 yourlang2
+```
+
+This will add parallell translation files at `src/wordweaver/data/yourlang/i18n/en.json`, `src/wordweaver/data/yourlang/i18n/yourlang1.json`, and `src/wordweaver/data/yourlang/i18n/yourlang2.json`.
+
+These files will be initialized with all of the tags from your language data.
+
+### Translate files
+
+You can either translate these files by entering translation values in the json directly. So, the English translation for a French conjugator might look partially like this:
+
+<sub>Source: src/wordweaver/data/fr/i18n/en.json</sub>
 
 ```json
-[
-   {
-       "tag":"1SG",
-       "en": 
-            {
-                 "subject": "I"
-            },
-       "fr": 
-            {
-                 "subject": "Je"
+
+{
+    "ww-data": {
+        "options": {
+            "items": {
+                "indicatif-present": "Indicative Present",
+                "indicatif-imparfait": "Imperfect"
+                ...
             }
-   }
+        }
+    }
+}
+
+```
+
+The corresponding French translation file would like like this:
+
+<sub>Source: src/wordweaver/data/fr/i18n/fr.json</sub>
+
+```json
+
+{
+    "ww-data": {
+        "options": {
+            "items": {
+                "indicatif-present": "Indicatif Présent",
+                "indicatif-imparfait": "Indicatif Imparfait",
+                ...
+            }
+        }
+    }
+}
+
+```
+
+:::tip
+You can also upload your translation files to a translation editing service which means you don't have to edit the json directly and you can get a non-programmer translator working on the project as well.
+We recommend [POEditor](https://poeditor.com/) or [BabelEdit](https://www.codeandweb.com/babeledit)
+:::
+
+### Merging translations
+
+Once your translation files are done, you can merge them back in to your language data files using the following script:
+
+```bash
+wordweaver add-translations en fr yourlang1
+```
+
+This will attempt to merge your languages back in to your language data files. By default it will not override values that exist, but you can force that by adding the `--force` flag:
+
+```bash
+wordweaver add-translations en fr yourlang1
+```
+
+:::warning
+Adding translations with `--force` could erase some of your translations! Do it carefully, and review the changes afterwards.
+:::
+
+Once added, your language data files will be updated with the provided languages. For example, here is what the updated `options.json` file would look like:
+
+Before `wordweaver add-translations en fr`:
+```json
+[
+    {
+        "tag": "indicatif-present",
+        "type": "indicatif"
+    },
+    {
+        "tag": "indicatif-imparfait",
+        "type": "indicatif"
+    }
+    ...
 ]
 ```
-<sub>Source: `src/wordweaver/data/<yourlang>/pronouns.json`</sub>
+
+After `wordweaver add-translations en fr`:
+
+```json {5,6,7,8,9,10,15,16,17,18,19,20}
+[
+    {
+        "tag": "indicatif-present",
+        "type": "indicatif",
+        "fr": {
+            "tag": "Indicatif Pr\u00e9sent"
+        },
+        "en": {
+            "tag": "Indicative Present"
+        }
+    },
+    {
+        "tag": "indicatif-imparfait",
+        "type": "indicatif",
+        "fr": {
+            "tag": "Indicatif Imparfait"
+        },
+        "en": {
+            "tag": "Imperfect"
+        }
+    }
+    ...
+]
+```
+
 
 ## Edit CORS rules
 
@@ -321,10 +459,19 @@ The configuration is defined as a template `volumes/reverse/nginx/conf/wordweave
 
 Certbot manages your SSL cert. We recommend using [Let's Encrypt](https://letsencrypt.org/). After securing your server ensuring Docker is available, and cloning your repo onto your server, do the following steps to set up automated renewals of your SSL cert.
 
-1. Change the email and domain in `.env`
+Your SSL certification using Let's Encrypt is initialized in the `init-letsencrypt.sh` script in the root of the repo. 
+
+1. Change the email and domain in `.env`. If you are just testing out your deployment, keep `STAGING` set to `1` which will prevent you from hitting [Let's Encrypt Rate Limits](https://letsencrypt.org/docs/rate-limits/). Once you are sure it is up and running though, change `STAGING` to `0`
+
+```bash
+LE_EMAIL=youremail@example.com
+DOMAIN=your.website.com
+STAGING=1
+```
+
 2. On your server, run `init-letsencrypt.sh` to get an SSL cert for your site
 3. Spin up your WordWeaver by running `docker-compose -f docker-compose.prod.yml up`
    
 :::important
-Your DNS records will have to be set up to point to your server
+Your DNS records for the DOMAIN will have to be set up to point to your server. Your server host should provide you with information on how to set up either an A record or CNAME record.
 :::
