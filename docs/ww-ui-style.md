@@ -1,12 +1,12 @@
 ---
 id: ww-ui-style
-title: Styling your WordWeaver
-sidebar_label: Styling
+title: Customize the style of your WordWeaver
+sidebar_label: Styling your WordWeaver
 ---
 
-*This guide assumes you have followed the steps of both [installing](ww-installation.md) and [setting up](ww-firststeps.md) WordWeaver. It also assumes some familiarity with [Sass](https://sass-lang.com/)*
+**This guide assumes you have followed the steps for [installing](installation.md) WordWeaver. It also assumes some familiarity with [Sass](https://sass-lang.com/)*
 
-WordWeaver comes with quite a few preset themes out of the box. The default available themes (seen below) are defined in your [WordWeaver UI configuration](ww-ui-customization.md) (`projects/word-weaver/src/config/config.ts`)
+WordWeaver comes with quite a few preset themes out of the box. The default available themes (seen below) are defined in your [WordWeaver configuration](ww-ui-customization.md) (`projects/word-weaver/src/config/config.ts`)
 
 ```typescript
 export const THEMES: Theme[] = [
@@ -51,7 +51,20 @@ export const THEMES: Theme[] = [
 
 ## Constraining available themes
 
-To constrain the list of available themes from your users, just remove them from your configuration.
+To constrain the list of available themes from your users, just remove them from your configuration. For example to remove everything except for the default theme and the dark theme you would edit your configuration file (`projects/word-weaver/src/config/config.ts`) as follows:
+
+```typescript
+export const THEMES: Theme[] = [
+  {
+    value: "DEFAULT-THEME",
+    label: marker("ww.settings.themes.blue")
+  },
+  {
+    value: "DARK-THEME",
+    label: marker("ww.settings.themes.dark")
+  }
+];
+```
 
 ## Default themes
 
@@ -173,5 +186,3 @@ export const THEMES: Theme[] = [
 ```
 
 That's it! You've added your new theme. Congratulations!
-
-## Custom CSS

@@ -1,0 +1,80 @@
+---
+id: deploy
+title: Deploying your WordWeaver
+sidebar_label: Deploy your WordWeaver
+---
+
+## GitHub Pages
+
+WordWeaver is set up to deploy to GitHub Pages so that you can deploy your WordWeaver for free without having to maintain a server! To do so, you'll have to [make a fork of the WordWeaver repository](https://github.com/roedoejet/wordweaver/fork).
+
+Once you do this, you will have to enable GitHub workflows as shown below:
+
+---
+
+<img src={require('@site/static/img/enable-workflow.png').default} />
+
+---
+
+Then, make sure that 'GitHub Pages' (the free service we are using to host your website) is set up to deploy from your 'gh-pages' branch. You can do this by going to Settings > Pages and then selecting "Branch: gh-pages" as the source as shown below:
+
+---
+
+<img src={require('@site/static/img/github-pages.png').default} />
+
+---
+
+You'll then have to change the [base key configuration](#base) to point to your fork: `https://<yourgitusername>.github.io/wordweaver`.
+
+Then, whenever you push a change to your fork, your WordWeaver will also build and deploy to `https://<yourgitusername>.github.io/wordweaver`!
+
+## Environment Configuration
+
+These files are found in `projects/word-weaver/src/environments`. 
+The defaults found in `projects/word-weaver/src/environments/environment.ts` are set to run your WordWeaver on your local machine, but are not meant to be used in production.
+
+### appName
+
+**Type**: string
+
+**Dependent types**: None
+
+**Effect**: Changes the name of your WordWeaver
+
+**Requirements**: None
+
+---
+
+### base
+
+**Type**: string
+
+**Dependent types**: None
+
+**Effect**: The base URL where your WordWeaver will be deployed
+
+**Requirements**: Must begin with `//`. Must **not** end with `/`.
+
+---
+
+### dataPrefix
+
+**Type**: string
+
+**Dependent types**: None
+
+**Effect**: Fetches all data from this location. The location should follow `/assets/data/<your_language>/<your_version/`. e.g. `/assets/data/fr/v1/`
+
+**Requirements**: Must begin and end with `/`.
+
+---
+
+### dataTestPrefix
+
+**Type**: string
+
+**Dependent types**: None
+
+**Effect**: Fetches all data from this location when `Test API` button is selected from Settings view. The location should follow `/assets/data/<your_language>/<your_version/`. e.g. `/assets/data/fr/v2/`
+
+**Requirements**: Must begin and end with `/`.
