@@ -388,15 +388,13 @@ export const META: Meta = {
 };
 ```
 
-Now, let's break this down! The following guide to configuration separates each configurable piece and describes its *type*, any *dependent types*, the *effect* it has on the UI, and any other *requirements* to the configuration.
+Now, let's break this down! The following guide to configuration separates each configurable piece and describes its *type*, the *effect* it has on the UI, and any other *requirements* to the configuration.
 
 ---
 
 ### contributors
 
 **Type**: `Contributor[]`
-
-**Dependent types**: [Contributor](ww-ui-types#contributor)
 
 **Effect**: Adding information to the `Meta.contributors` list will add that information to the list of contributors in the About Page. 
 
@@ -415,8 +413,6 @@ Now, let's break this down! The following guide to configuration separates each 
 }
 ```
 
-**Dependent types**: None
-
 **Effect**: Adds the name of the copyright holder (and a link to their site) to the footer of the page
 
 **Requirements**: A valid link that begins with `https://`
@@ -426,8 +422,6 @@ Now, let's break this down! The following guide to configuration separates each 
 ### languages
 
 **Type**: `Language[]`
-
-**Dependent types**: [Language](ww-ui-types#language)
 
 **Effect**: The list of languages here is used in the Settings and Header to select languages. The `label` is the displayed string and the `value` is the internal value. We recommend this should be an [ISO 639-3](https://en.wikipedia.org/wiki/ISO_639-3) value.
 
@@ -448,7 +442,6 @@ Now, let's break this down! The following guide to configuration separates each 
     youtube: Link;
 }
 ```
-**Dependent types**: [Link](ww-ui-types#link)
 
 **Effect**: Adds a link at `Link.url` if `Link.display` is equal to `true`
 
@@ -460,8 +453,6 @@ Now, let's break this down! The following guide to configuration separates each 
 
 **Type**: `string`
 
-**Dependent types**: None
-
 **Effect**: Adds a graphic to the top left of the page
 
 **Requirements**: Valid links must either be valid web links starting with `https://`, or paths to internal resources `ex: 'assets/logo.png'`
@@ -471,8 +462,6 @@ Now, let's break this down! The following guide to configuration separates each 
 ### wordmaker.tempView
 
 **Type**: `"default" | TierNames;`
-
-**Dependent types**: [TierNames](ww-ui-types#tiernames)
 
 **Effect**: Determines which value to display in the 3rd step of the WordMaker view. 
 If default, then the option value is chosen, otherwise any declared tier name can be chosen.
@@ -484,8 +473,6 @@ If default, then the option value is chosen, otherwise any declared tier name ca
 ### tableviewer.viewModes
 
 **Type**: `TableviewerViewModes[]`
-
-**Dependent types**: [TableviewerViewModes](ww-ui-types#tableviewerviewmodes)
 
 **Effect**: Determines which different Tableviewer views are available. Default allowable views are `list`, `grid` and `tree` views.
 
@@ -538,9 +525,7 @@ export const initialSettings: Partial<SettingsState> = {
 
 ### language
 
-**Type**: [TableviewerViewModes](ww-ui-types#tableviewerviewmodes)
-
-**Dependent types**: None
+**Type**: "list" | "grid" | "tree"
 
 **Effect**: Determines which view is shown by default.
 
@@ -550,9 +535,7 @@ export const initialSettings: Partial<SettingsState> = {
 
 ### theme
 
-**Type**: [Theme](ww-ui-types#theme)
-
-**Dependent types**: [ThemeName](ww-ui-types#themename)
+**Type**: Theme
 
 **Effect**: Determines which theme is applied by default.
 
@@ -569,74 +552,6 @@ To see how to create your own themes, please visit the [theme guide](ww-ui-style
 
 **Type**: boolean
 
-**Dependent types**: None
-
 **Effect**: Determines whether auto-night-mode is turned on or not. If turned on, a dark theme will be applied between the hours 21:00 and 7:00.
 
 **Requirements**: None
-
-
-<!-- ### Overriding TableViewer Default Settings
-
-There are a number of variables that are kept to maintain state for the TableViewer that have defaults. 
-Many of these variables are internal and shouldn't need to be edited manually. However, some, in particular `view` and `gridOrder`
-should be overridden as required.
-
-See the default initial state below:
-
-```typescript {10-15}
-export const initialBaseState: TableviewerState = {
-  option: [],
-  agent: [],
-  patient: [],
-  root: [],
-  conjugations: [],
-  treeDepth: 1,
-  standardTreeOrder: true,
-  loading: false,
-  view: "list",
-  gridOrder: {
-    col: "option",
-    row: "pn",
-    main: "root"
-  }
-};
-```
-
-Values declared here can be overridden in your configuration file in `projects/word-weaver/src/config` by exporting a variable called `initialTableViewerSettings`.
-Below is an example that overrides the `view` and `gridOrder` values:
-
-```typescript
-export const initialTableViewerSettings: Partial<TableviewerState> = {
-  view: "grid",
-  gridOrder: {
-    col: "root",
-    row: "pn",
-    main: "option"
-  }
-}
-```
-
----
-
-#### view
-
-**Type**: [TableviewerViewModes](ww-ui-types#tableviewerviewmodes)
-
-**Dependent types**: None
-
-**Effect**: Determines which view is shown by default.
-
-**Requirements**: None
-
----
-
-#### gridOrder
-
-**Type**: [GridOrder](ww-ui-types#gridorder)
-
-**Dependent types**: [GridOrderOptions](ww-ui-types#gridorderoptions)
-
-**Effect**: Determines which data is stored as columns, rows or tabs by default.
-
-**Requirements**: None -->
