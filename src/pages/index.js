@@ -13,7 +13,7 @@ const features = [
     description: (
       <>
         WordWeaver was designed to be easily modified and used in a wide variety of language conjugation contexts.
-        Have a look at the <a href='docs/features'>features</a> to see if it's right for your project.
+        Have a look at the <a href='docs/intro#important-features-for-language-revitalization'>features</a> to see if it's right for your project.
       </>
     ),
   },
@@ -23,7 +23,7 @@ const features = [
     description: (
       <>
         WordWeaver lets you focus on your language model, and we&apos;ll do the chores and visualization. Go
-        ahead and have a read about how to <a href='docs/firststeps'>get started</a>.
+        ahead and have a read about how to <a href='docs/installation'>get started</a>.
       </>
     ),
   },
@@ -70,7 +70,7 @@ function Home() {
                 'button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/')}>
+              to={useBaseUrl('docs/intro')}>
               Get Started
             </Link>
           </div>

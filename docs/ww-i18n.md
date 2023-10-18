@@ -1,10 +1,10 @@
 ---
 id: ww-i18n
-title: Translation & Internationalization
-sidebar_label: Translation & Internationalization
+title: Translating your WordWeaver
+sidebar_label: Translating your WordWeaver
 ---
 
-*This guide assumes you have followed the steps of both [installing](ww-installation.md) and [setting up](ww-firststeps.md) WordWeaver. It also assumes some familiarity with [JSON](https://en.wikipedia.org/wiki/JSON), basic [directory structure](ww-ui-customization.md#the-basic-layout) of your WordWeaver, [Command Line](https://en.wikipedia.org/wiki/Command-line_interface), and [NPM](https://en.wikipedia.org/wiki/Npm_(software))*
+**This guide assumes you have followed the steps for [installing](installation.md) WordWeaver. It also assumes some familiarity with [JSON](https://en.wikipedia.org/wiki/JSON), basic [directory structure](ww-ui-customization.md#the-basic-layout) of your WordWeaver, [Command Line](https://en.wikipedia.org/wiki/Command-line_interface), and [NPM](https://en.wikipedia.org/wiki/Npm_(software))*
 
 The basic interface for your WordWeaver is already translated into English and French. But, you may want to add translations for your own language. This is the guide to show you how to do that.
 
@@ -14,9 +14,9 @@ Use a unique 2 or 3 digit code, or look yours up in the [ISO 639-3 standard](htt
 
 ## 2. Create your file
 
-Add a file to your i18n assets as seen below:
+Add two files to your i18n assets as seen below:
 
-```text {15}
+```text {16,19}
 .
 +-- projects
 |   +-- server
@@ -29,25 +29,14 @@ Add a file to your i18n assets as seen below:
 |               +-- shared
 |           +-- assets
 |               +-- i18n
+|                   +-- data
+|                       +-- en.json
+|                       +-- fr.json
+|                       +-- <yourcode>.json
 |                   +-- en.json
 |                   +-- fr.json
 |                   +-- <yourcode>.json
-|               +-- wwlogo.png // TODO: Rename this
-|               +-- logo.svg // TODO: Rename this
-|           +-- config
-|               +-- config.fr.ts
-|               +-- config.moh.ts
-|               +-- config.ts
-|           +-- environments
-|               +-- environment.prod.ts
-|               +-- environment.test.ts
-|               +-- environment.ts
-|           +-- scss
-|           +-- themes
-|           +-- index.html
-|           +-- styles.scss
-+-- angular.json
-+-- package.json
+...
 ```
 
 ## 3. Update your WordWeaver Configuration
@@ -56,7 +45,9 @@ Update your configuration values for [languages](ww-ui-customization.md#language
 
 ## 4. Extract default translations
 
-Use the npm script, `npm run-script extract-translations` to update your json file.
+Use the npm script, `npm run-script extract-translations` to update your json files automatically.
+
+TODO: this currently only updates `projects/word-weaver/src/assets/i18n/<yourcode>.json` but not `projects/word-weaver/src/assets/i18n/data/<yourcode>.json`
 
 ## 5. Update your translations
 

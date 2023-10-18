@@ -19,4 +19,13 @@ So, the collaboration was formed, and a team of researchers from NRC joined a gr
 
 As the ILT has a national scope, NRC did not want to create just one verb conjugator, but rather create a framework that other communities could adapt to create their own WordWeavers. The tool documented here is the result of this work and the guides contained in this site show you how to build your own WordWeavers and do everything from using your own language, providing your own translation of the entire site, or adapting the colour theme used in the site.
 
-Good luck, and [start making your WordWeaver](ww-firststeps.md)!
+WordWeaver has a number of important features that are custom-designed for language revitalization purposes.
+
+#### Important features for language revitalization
+
+* It is available online and offline
+* WordWeaver is serverless, meaning you can deploy it for free and not worry about maintaining a server
+* It supports a wide variety of data formats
+* The site is translated out-of-the-box in English and French, but you can also [add your own language](ww-i18n) thanks to full i18n support
+* You can [customize the look and feel](ww-ui-style) of your WordWeaver by changing the colour themes and by uploading your own custom artwork
+* It is available on the web, and on mobile
